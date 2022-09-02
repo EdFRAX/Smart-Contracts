@@ -23,8 +23,8 @@ contract ThisContract is ERC721A, Ownable, ERC2981 {
 
     enum SaleState {
         CLOSED,
-        OPEN,
-        PRESALE
+        PRESALE,
+        OPEN
     }
 
     SaleState public saleState = SaleState.CLOSED;
