@@ -1,6 +1,6 @@
 # Welcome to Smart-Contracts
 
-All the code in these repos was created by edited by [EdFRAX](https://www.youtube.com/c/EdFRAX) and explained on the main YouTube channel in Hindi.
+All the code in these repos was simplified and normalized by [EdFRAX](https://www.youtube.com/c/EdFRAX) and explained on the main YouTube channel in Hindi.
 
 Instructions are given on EdFRAX YouTube Channel 👇 to use this repo for your already created collection without auto generative metadata or with generative metadata.
 
@@ -8,7 +8,7 @@ Instructions are given on EdFRAX YouTube Channel 👇 to use this repo for your 
 
 # Smart Contracts (ONLY FOR TUTORIAL) 
 
-This repo gives a ERC721, ERC721A and ERC1155 smart contracts for your NFTs.
+This repo gives ERC721, ERC721A and ERC1155 smart contracts for your NFTs.
 
 ## Usage
 
