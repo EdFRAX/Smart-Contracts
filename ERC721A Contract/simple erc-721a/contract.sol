@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 //Simple ERC-721A Contract to show all NFTs on marketplaces at once.
 contract TheContract is ERC721A, Ownable {
 
-    string public baseURI = "ipfs://D";
+    string public baseURI = "ipfs://CID/";
     uint256 maxsupply = 1000; //Supply will be equal to quantity.
 
     constructor(
