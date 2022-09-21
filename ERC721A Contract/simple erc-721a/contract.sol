@@ -4,44 +4,19 @@ pragma solidity ^0.8.4;
 import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+//Simple ERC-721A Contract to show all NFTs on marketplaces at once.
 contract TheContract is ERC721A, Ownable {
 
-    string public baseURI;
-    uint256 MAX_MINTS = 10000;
-    uint256 MAX_SUPPLY = 10000;
-    uint256 public mintRate = 0 ether;
+    string public baseURI = "ipfs://D";
+    uint256 maxsupply = 1000; //Supply will be equal to quantity.
 
     constructor(
         string memory _name,
-        string memory _symbol,
-        string memory _initBaseURI) 
+        string memory _symbol) 
         
         ERC721A(_name, _symbol) {
-        setBaseURI(_initBaseURI);
-        _mint(msg.sender, 10000);
+        // It will mint the amount at the address that deployed this contract.
+        _mint(msg.sender, maxsupply);
     }
 
-    function mint(uint256 quantity) external payable {
-        // _safeMint's second argument now takes in a quantity, not a tokenId.
-        require(quantity + _numberMinted(msg.sender) <= MAX_MINTS, "Exceeded the limit");
-        require(totalSupply() + quantity <= MAX_SUPPLY, "Not enough tokens left");
-        require(msg.value >= (mintRate * quantity), "Not enough ether sent");
-        _mint(msg.sender, quantity);
-    }
-    
-    function setBaseURI(string memory _newBaseURI) public onlyOwner {
-        baseURI = _newBaseURI;
-    }
-
-    function _baseURI() override internal view returns (string memory) {
-        return baseURI;
-    }
-
-    function setMintRate(uint256 _mintRate) public onlyOwner {
-        mintRate = _mintRate;
-    }
-
-    function withdraw() external payable onlyOwner {
-        payable(owner()).transfer(address(this).balance);
-    }
 }
